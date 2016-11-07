@@ -1,8 +1,19 @@
 {
+  "default_attributes": {
+    "nginx": {
+      "env": ["ruby"]
+    }
+  },
   "run_list": [
     "recipe[dstat]",
-    "recipe[apache]",
-    "recipe[mysql]"
+    "recipe[mysql]",
+    "recipe[vim]",
+    "recipe[git::default]",
+    "recipe[git::source]",
+    "recipe[yum-epel]",
+    "recipe[nginx]",
+    "recipe[ruby-env]",
+    "recipe[nodejs]"
   ],
   "automatic": {
     "ipaddress": "webdb"
